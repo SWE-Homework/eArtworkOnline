@@ -31,4 +31,6 @@ export class CartService {
   getChippingPrices(){
     return this.httpClient.get('/assets/shipping.json');
   }
+
+
 }

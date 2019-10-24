@@ -35,4 +35,49 @@ export class CheckoutComponent implements OnInit {
     }
   }
 
+  placeOrder(){
+    const shipping=this.checkoutService.formShipping.value;
+    const payment=this.checkoutService.formPayment.value;
+
+    let obj={
+      "status": "P",
+        "dateCreated": "2013-10-10",
+        "dateShipped": "2013-10-10",
+        "shippingInfo":{
+        "shippingType":"",
+          "shippingCost":"10.10",
+          "shippingAddress":{
+          "street": shipping.street,
+            "city": shipping.city,
+            "state": shipping.state,
+            "zipcode": shipping.zip
+        },
+        "methodPayement":{
+          "completeNameOnCard": payment.fullName,
+            "cardNumber": payment.cardNumber,
+            "expDate":"2015-10-10",
+            "csvCode": payment.cvv
+        }
+      },
+      "orderDetail": [
+        {"quantity":"1",
+          "unitCost":"12",
+          "artWork":{
+            "artworkId":1
+          }
+        }
+      ]
+    }
+
+    this.checkoutService.placeOrder(obj,this.userService.userLogin.userAccountId);
+
+    this._router.navigate(['afteraddtocart','Your order has been placed successfully','Thank you for shopping with us'], {skipLocationChange: true})
+    this.cartService.clearItems();
+
+  }
+
+  continueShopping(){
+    this._router.navigate(['listProductCategory',1,'',''], {skipLocationChange: true})
+  }
+
 }

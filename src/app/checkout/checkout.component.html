@@ -2,7 +2,7 @@
   <h3>Checking out</h3>
 
   <mat-horizontal-stepper>
-    <mat-step [stepControl]="checkoutService.formShipping" >
+    <mat-step [stepControl]="checkoutService.formShipping" [optional]=false>
       <ng-template matStepLabel><span class="titleLabel"><b>Shipping information</b></span></ng-template>
           <form [formGroup]="checkoutService.formShipping">
             <mat-grid-list cols="1" rowHeight="300px">
@@ -11,12 +11,12 @@
                 <div class="controles-container">
 
                     <mat-form-field class="inputSpace">
-                      <input  formControlName="street" matInput placeholder="Street"/>
+                      <input  formControlName="street" matInput placeholder="Street" required/>
                       <mat-error>street is required</mat-error>
                     </mat-form-field>
 
                     <mat-form-field class="inputSpace">
-                      <input  formControlName="city" matInput placeholder="city*"/>
+                      <input  formControlName="city" matInput placeholder="city*" required/>
                       <mat-error>city is required</mat-error>
                     </mat-form-field>
 
@@ -40,7 +40,7 @@
           </div>
     </mat-step>
 
-    <mat-step [stepControl]="checkoutService.formPayment">
+    <mat-step [stepControl]="checkoutService.formPayment"  [optional]=false>
       <ng-template matStepLabel><span class="titleLabel"><b>Payment information</b></span></ng-template>
       <form [formGroup]="checkoutService.formPayment">
         <mat-grid-list cols="1" rowHeight="300px">
@@ -150,6 +150,6 @@
 
   <div class="cart_buttons">
     <button type="button" class="button cart_button_clear" (click)="continueShopping()">Continue shopping</button>
-    <button type="button" class="button cart_button_checkout" (click)="checkout()">Place order</button>
+    <button type="button" class="button cart_button_checkout" (click)="placeOrder()">Place order</button>
   </div>
 </div>

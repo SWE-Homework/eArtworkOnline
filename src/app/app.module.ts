@@ -21,6 +21,7 @@ import { ContactComponent } from './contact/contact.component';
 import {MaterialModule} from "./material/material.module";
 import { UserAccount2Component } from './user-account2/user-account2.component';
 import {MatConfirmDialogComponent} from "./mat-confirm-dialog/mat-confirm-dialog.component";
+import {STEPPER_GLOBAL_OPTIONS} from "@angular/cdk/stepper";
 
 
 @NgModule({
@@ -49,7 +50,11 @@ import {MatConfirmDialogComponent} from "./mat-confirm-dialog/mat-confirm-dialog
     MaterialModule,
     ReactiveFormsModule
   ],
-  providers: [DatePipe],
+  providers: [DatePipe,
+    {
+      provide: STEPPER_GLOBAL_OPTIONS,
+      useValue: { showError: true }
+    }],
   bootstrap: [AppComponent],
   entryComponents: [MatConfirmDialogComponent]
 })
