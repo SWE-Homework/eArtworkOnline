@@ -30,14 +30,9 @@ export class UserAccountService {
   userProfilePicRui="";
   save(user) {
 
-    const fd = new FormData();
-    fd.append('file',this.userProfilePic, this.userProfilePic.name);
-    this.httpClient.post(this.uploadURL, fd).subscribe(resp => {
-        //this.userProfilePicRui = JSON.parse(JSON.stringify(resp)).fileName;
-        console.log(JSON.parse(JSON.stringify(resp)));
 
-        this.user = {
-          userProfilePic: JSON.parse(JSON.stringify(resp)).fileName,
+         this.user = {
+          userProfilePic: '',
           userAccountId: null,
           firstName: this.formUserAccount.get('firstName').value,
           lastName: this.formUserAccount.get('lastName').value,
@@ -45,60 +40,20 @@ export class UserAccountService {
           password: this.formUserAccount.get('password').value,
 
         }
-        console.log(this.user);
+
         this.httpClient.post(this.userAddUrl, this.user).subscribe(resp => {
-          console.log("Delete was not successfull, error message :")
-            return ({ message:"Delete was not successfull, error message :"});
+            console.log("Successfull : "+resp)
+            this.formUserAccount.reset()
+            return ({ message:"Successfull :"});
           },
           error => {
-          console.log("Delete was not successfull, error message :" + error)
-            return ({ message:"Delete was not successfull, error message :" + error});
-          }
-        );
-
-      },
-      error => {
-        this.user = {
-          userProfilePic: "",
-          userAccountId: null,
-          firstName: this.formUserAccount.get('firstName').value,
-          lastName: this.formUserAccount.get('lastName').value,
-          email: this.formUserAccount.get('email').value,
-          password: this.formUserAccount.get('password').value,
-
-        }
-        console.log(this.user);
-        this.httpClient.post(this.userAddUrl, this.user).subscribe(resp => {
-          console.log("Delete was not successfull, error message :")
-            return ({ message:"Delete was not successfull, error message :"});
-          },
-          error => {
-          console.log("Delete was not successfull, error message :" + error)
-            return ({ message:"Delete was not successfull, error message :" + error});
+            console.log("Error : "+error.error)
+            return ({ message:"error message :" + error});
           }
         );
 
 
-      }
-    );
 
-    // this.user = {
-    //   userProfilePic: this.userProfilePicRui,
-    //   userAccountId: null,
-    //   firstName: this.formUserAccount.get('firstName').value,
-    //   lastName: this.formUserAccount.get('lastName').value,
-    //   email: this.formUserAccount.get('email').value,
-    //   password: this.formUserAccount.get('password').value,
-    //
-    // }
-    // console.log(this.user);
-    // this.httpClient.post(this.userAddUrl, this.user).subscribe(resp => {
-    //         return ({ message:"Delete was not successfull, error message :"});
-    //   },
-    //   error => {
-    //     return ({ message:"Delete was not successfull, error message :" + error});
-    //   }
-    // );
 
   }
 

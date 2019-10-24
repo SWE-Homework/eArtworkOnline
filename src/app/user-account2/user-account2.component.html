@@ -20,16 +20,19 @@
 
         </div>
         <div class="controles-container">
+
+          <mat-form-field class="inputSpace">
+            <input  formControlName="email" matInput placeholder="email"/>
+          </mat-form-field>
+
           <mat-form-field class="inputSpace">
             <input  formControlName="password" type="password" matInput placeholder="PassWord*"/>
             <mat-error>Name is required</mat-error>
           </mat-form-field>
-          <mat-form-field class="inputSpace">
-            <input  formControlName="email" matInput placeholder="email"/>
-          </mat-form-field>
+
         </div>
         <div class="controles-container">
-          <input    type="file"  (change)="onFileChange($event)"  placeholder=" Profile Pic*"/>
+         <input    type="file"  (change)="onFileChange($event)"  placeholder=" Profile Pic*"/>
 
         </div>
       </mat-grid-tile>

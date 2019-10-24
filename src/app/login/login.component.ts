@@ -16,19 +16,25 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit() {
+
     this.userService.loginIn().subscribe(resp => {
+        console.log("I m here login fail to check")
         if (resp != null) {
-          this.userService.userLogin = JSON.parse(JSON.stringify(resp));
+          this.userService.userLogin = resp;
+          this.userService.isLoggedIn=true;
           const obj = {
             signin: 'Sign out'
           };
           this.userService.emitValue(obj);
           this.userService.initializeForm();
           this._router.navigate(['checkout'], {skipLocationChange: true});
+        }else{
+          this.errorMessageLogin = 'Invalid Credentials';
         }
       },
       error => {
-        this.errorMessageLogin = 'Invalid Credentials';
+      console.log("Error login fails")
+        this.errorMessageLogin = 'Errror : '+error;
       }
     );
     //
