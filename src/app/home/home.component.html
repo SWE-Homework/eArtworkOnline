@@ -50,8 +50,8 @@
               </div>
               <div class="top_bar_user">
                 <div class="user_icon"><img src="assets/images/user.svg" alt=""></div>
-                <div><a href="#">Register</a></div>
-                <div><a href="#">Sign in</a></div>
+                <div><a (click)="loadRegister()">Register</a></div>
+                <div><a (click)="loadSignIn()">{{labelSignIn}}</a></div>
               </div>
             </div>
           </div>
@@ -156,7 +156,7 @@
                   <li><a href="blog.html">Orders<i class="fas fa-chevron-down"></i></a></li>
                   <li><a href="blog.html">Memberships & Subscription<i class="fas fa-chevron-down"></i></a></li>
                   <li><a href="blog.html">Blog<i class="fas fa-chevron-down"></i></a></li>
-                  <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
+                  <li><a (click)="loadContact()">Contact<i class="fas fa-chevron-down"></i></a></li>
                 </ul>
               </div>
 

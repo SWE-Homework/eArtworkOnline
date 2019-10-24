@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CartService} from "../service/cart.service";
+import {UserService} from "../service/user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-shipping-cart',
@@ -12,7 +14,9 @@ export class ShippingCartComponent implements OnInit {
   totalItem=0;
   total:number=0;
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService,
+              private userService: UserService,
+              private _router: Router) { }
 
   ngOnInit() {
     console.log("in 1");
@@ -26,6 +30,18 @@ export class ShippingCartComponent implements OnInit {
       console.log("list : "+this.listItems);
       this.total+=(this.listItems[i].newPrice*this.listItems[i].quantity);
     }
+  }
+
+  checkout(){
+    if(this.userService.isLoggedIn==true){
+      this._router.navigate(['checkout'], {skipLocationChange: true})
+    }else{
+      this._router.navigate(['login'], {skipLocationChange: true})
+    }
+  }
+
+  continueShopping(){
+    this._router.navigate(['listProductCategory',1,'',''], {skipLocationChange: true})
   }
 
 }

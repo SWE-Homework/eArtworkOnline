@@ -1,8 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
-@import "cart_styles.css";
+@import "assets/styles/cart_styles.css";
 @import "assets/styles/cart_responsive.css";
 @import "assets/styles/product_styles.css";
 @import "assets/styles/product_responsive.css";
+
+@import "assets/styles/contact_responsive.css";
+@import "assets/styles/contact_styles.css";
+
 @import "assets/styles/main_styles.css";
 @import "assets/styles/responsive.css";
 
@@ -18,3 +22,6 @@
 .main_menu_element {
   margin-left: 10%;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

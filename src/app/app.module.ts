@@ -13,8 +13,14 @@ import {HttpClientModule} from "@angular/common/http";
 import { BartitleComponent } from './bartitle/bartitle.component';
 import { ShippingCartComponent } from './shipping-cart/shipping-cart.component';
 import { AfterAddTocartComponent } from './after-add-tocart/after-add-tocart.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { LoginComponent } from './login/login.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { ContactComponent } from './contact/contact.component';
+import {MaterialModule} from "./material/material.module";
+import { UserAccount2Component } from './user-account2/user-account2.component';
+import {MatConfirmDialogComponent} from "./mat-confirm-dialog/mat-confirm-dialog.component";
 
 
 @NgModule({
@@ -27,16 +33,24 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ListProductsComponent,
     BartitleComponent,
     ShippingCartComponent,
-    AfterAddTocartComponent
+    AfterAddTocartComponent,
+    LoginComponent,
+    CheckoutComponent,
+    ContactComponent,
+    UserAccount2Component,
+    MatConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [DatePipe],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [MatConfirmDialogComponent]
 })
 export class AppModule { }

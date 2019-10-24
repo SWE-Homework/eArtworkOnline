@@ -1,0 +1,32 @@
+
+<div class="divCenter">
+  <div class="headTitle">
+    <span>_</span>
+    <h3>Customer Login</h3>
+  </div>
+
+  <form [formGroup]="userService.form" class="normal-form">
+    <mat-grid-list cols="1" rowHeight="350px">
+      <mat-grid-tile>
+
+        <div class="controles-container">
+
+          <mat-form-field class="inputSpace">
+            <input  formControlName="mail" matInput placeholder="Name*"/>
+            <mat-error>mail is required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="inputSpace">
+            <input  formControlName="password" matInput placeholder="Password*"/>
+            <mat-error>password is required</mat-error>
+          </mat-form-field>
+
+
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <button class="buttonLogin" mat-raised-button color="primary" type="button" [disabled]="userService.form.invalid" (click)="onSubmit()">Sign in</button>
+  </form>
+
+
+</div>

@@ -3,6 +3,7 @@ import {ActivatedRoute, Router, RouterOutlet} from "@angular/router";
 import {CategoryService} from "../service/category.service";
 import {CartService} from "../service/cart.service";
 import {slideInAnimation} from "../animations";
+import {UserService} from "../service/user.service";
 
 @Component({
   selector: 'app-home',
@@ -20,6 +21,7 @@ export class HomeComponent implements OnInit {
   listCartItem;
   totalAmountCart;
   totalItemCart;
+  labelSignIn="Sign in";
     /*=[
     {categoryId: 1, name: 'All Categories'},
     {categoryId: 2, name: 'Computers'},
@@ -33,7 +35,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private _router: Router, private _activedRoute: ActivatedRoute,
               private categoryService: CategoryService,
-              private cartService: CartService) {
+              private cartService: CartService,
+              private userService: UserService) {
 
   }
 
@@ -41,6 +44,10 @@ export class HomeComponent implements OnInit {
     this.cartService.emmitter.subscribe(dataEmit=>{
       this.totalAmountCart=dataEmit.totalPrice;
       this.totalItemCart=dataEmit.totalItem;
+    })
+
+    this.userService.emmitter.subscribe(dataEmit=>{
+        this.labelSignIn=dataEmit.signin;
     })
 
     this.categoryService.getList().then(dateCat=>{
@@ -81,7 +88,31 @@ export class HomeComponent implements OnInit {
     this.totalItemCart=this.listCartItem.length;
   }
 
+  loadContact(){
+    this._router.navigate(['contact'], {skipLocationChange: true})
+  }
+
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+  }
+
+  loadSignIn(){
+    if(this.userService.isLoggedIn==true){
+      let obj={
+        signin: 'Sign in'
+      }
+      this.userService.isLoggedIn=false;
+      this.userService.emitValue(obj);
+      this._router.navigate(['listProductCategory',1,'',''], {relativeTo:this._activedRoute})
+    }else{
+
+      this._router.navigate(['login'], {skipLocationChange: true})
+    }
+
+  }
+
+
+  loadRegister(){
+    this._router.navigate(['register'], {skipLocationChange: true})
   }
 }
