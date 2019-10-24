@@ -7,6 +7,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 export class UserService {
   isLoggedIn:boolean=false;
   emmitter=new EventEmitter<object>();
+  userLogin;
 
   emitValue(value:object){
     this.emmitter.emit(value);
@@ -19,10 +20,10 @@ export class UserService {
 
   constructor() { }
 
-  loginIn(): boolean{
+  loginIn() {
     this.isLoggedIn=true;
 
-    return true;
+
   }
 
 
