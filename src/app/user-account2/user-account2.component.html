@@ -21,7 +21,7 @@
         </div>
         <div class="controles-container">
           <mat-form-field class="inputSpace">
-            <input  formControlName="password" matInput placeholder="PassWord*"/>
+            <input  formControlName="password" type="password" matInput placeholder="PassWord*"/>
             <mat-error>Name is required</mat-error>
           </mat-form-field>
           <mat-form-field class="inputSpace">
@@ -37,7 +37,7 @@
     </mat-grid-list>
 
     <div class="button-row">
-      <button class="buttonLogin" mat-raised-button color="primary" type="submit" [disabled]="service.formUserAccount.invalid" (click)="onSubmit()">Save</button>
+      <button class="buttonLogin" mat-raised-button color="primary" type="button" [disabled]="service.formUserAccount.invalid" (click)="onSubmit()">Save</button>
       <button class="buttonLogin"  mat-raised-button color="warn" (click)="onClear()" >Clear</button>
     </div>
 

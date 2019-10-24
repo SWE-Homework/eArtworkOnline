@@ -59,7 +59,7 @@ export class ProductViewComponent implements OnInit {
       }
        this.cateService.emitValue(obectTot);
 
-    this._router.navigate(['afteraddtocart'], {skipLocationChange: true})
+    this._router.navigate(['afteraddtocart','Artwork added successfully','Thank you for shopping with us'], {skipLocationChange: true})
   }
 
   getTotal(): number{

@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'listProduct/:typeresearch/:catId/:other', component: ListProductsComponent,data: {animation: 'listproductPage'}},
   {path: 'listProductCategory/:typeresearch/:catId/:other', component: ListProductsComponent, data: {animation: 'byCategory'}},
   {path: 'shippingcart', component: ShippingCartComponent,data: {animation: 'shippingPage'}},
-  {path: 'afteraddtocart', component: AfterAddTocartComponent,data: {animation: 'afteraddtocart'}},
+  {path: 'afteraddtocart/:message1/:message2', component: AfterAddTocartComponent,data: {animation: 'afteraddtocart'}},
   {path: 'contact', component: ContactComponent,data: {animation: 'contact'}},
   {path: 'checkout', component: CheckoutComponent,data: {animation: 'checkout'}},
   {path: 'login', component: LoginComponent,data: {animation: 'login'}},

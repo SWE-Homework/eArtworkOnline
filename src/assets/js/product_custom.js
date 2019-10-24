@@ -22,7 +22,7 @@ $(document).ready(function()
 {
 	"use strict";
 
-	/* 
+	/*
 
 	1. Vars and Inits
 
@@ -47,7 +47,7 @@ $(document).ready(function()
 		setHeader();
 	});
 
-	/* 
+	/*
 
 	2. Set Header
 
@@ -78,7 +78,7 @@ $(document).ready(function()
 		}
 	}
 
-	/* 
+	/*
 
 	3. Init Custom Dropdown
 
@@ -143,7 +143,7 @@ $(document).ready(function()
 		});
 	}
 
-	/* 
+	/*
 
 	4. Init Page Menu
 
@@ -219,57 +219,9 @@ $(document).ready(function()
 		menuActive = false;
 	}
 
-	/* 
+	/*
 
 	5. Init Recently Viewed Slider
-
-	*/
-
-	function initViewedSlider()
-	{
-		if($('.viewed_slider').length)
-		{
-			var viewedSlider = $('.viewed_slider');
-
-			viewedSlider.owlCarousel(
-			{
-				loop:true,
-				margin:30,
-				autoplay:true,
-				autoplayTimeout:6000,
-				nav:false,
-				dots:false,
-				responsive:
-				{
-					0:{items:1},
-					575:{items:2},
-					768:{items:3},
-					991:{items:4},
-					1199:{items:6}
-				}
-			});
-
-			if($('.viewed_prev').length)
-			{
-				var prev = $('.viewed_prev');
-				prev.on('click', function()
-				{
-					viewedSlider.trigger('prev.owl.carousel');
-				});
-			}
-
-			if($('.viewed_next').length)
-			{
-				var next = $('.viewed_next');
-				next.on('click', function()
-				{
-					viewedSlider.trigger('next.owl.carousel');
-				});
-			}
-		}
-	}
-
-	/* 
 
 	6. Init Brands Slider
 
@@ -313,7 +265,7 @@ $(document).ready(function()
 		}
 	}
 
-	/* 
+	/*
 
 	7. Init Quantity
 
@@ -350,7 +302,7 @@ $(document).ready(function()
 		}
 	}
 
-	/* 
+	/*
 
 	8. Init Color
 
@@ -374,7 +326,7 @@ $(document).ready(function()
 		}
 	}
 
-	/* 
+	/*
 
 	9. Init Favorites
 
@@ -390,7 +342,7 @@ $(document).ready(function()
 		});
 	}
 
-	/* 
+	/*
 
 	10. Init Image
 

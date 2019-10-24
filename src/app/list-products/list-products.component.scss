@@ -1,10 +1,14 @@
 a:hover{
   cursor: pointer;
 }
+
+.viewed_image{
+  width: 200px;
+}
 .items {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 20%;
+  margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 10px;
 
@@ -16,7 +20,7 @@ a:hover{
 }
 
 .items .item {
-  flex: 1 0 200px;
+  flex: 1 0 300px;
   box-sizing: border-box;
   color: #171e42;
   padding: 10px;
@@ -54,7 +58,7 @@ a:hover{
 }
 @media (min-width: 1460px) {
   .items .item {
-    max-width: calc(14.28571% - 10px);
+    max-width: calc(30% - 10px);
   }
 }
 @media (min-width: 1670px) {

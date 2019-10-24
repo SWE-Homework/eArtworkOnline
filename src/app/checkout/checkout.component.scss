@@ -1,0 +1,96 @@
+.titleLabel{
+  font-size: 20px;
+}
+
+.inputSpace{
+  margin-bottom: 20px;
+}
+
+.controles-container{
+  width: 100%;
+  padding: 5%;
+}
+
+.image_artwork{
+  margin: 0px;
+
+
+  height: 100px;
+}
+
+#monthId{
+   width: 50%;
+ }
+#yearId{
+  width: 50%;
+}
+
+.mat-form-field{
+  width: 100%;
+}
+
+.buttonCheck{
+  font-size: 18px;
+  color: royalblue;
+}
+
+.postionElement{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-right: 10%;
+  margin-left: 20%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 cornflowerblue;
+
+
+}
+
+.colorElement{
+  color: #1c7430;
+}
+
+.cart_buttons
+{
+  margin-top: 60px;
+  text-align: right;
+}
+.cart_button_clear
+{
+  display: inline-block;
+  border: none;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 48px;
+  color: rgba(0,0,0,0.5);
+  background: #FFFFFF;
+  border: solid 1px #b2b2b2;
+  padding-left: 35px;
+  padding-right: 35px;
+  outline: none;
+  cursor: pointer;
+  margin-right: 26px;
+}
+.cart_button_clear:hover
+{
+  border-color: #0e8ce4;
+  color: #0e8ce4;
+}
+.cart_button_checkout
+{
+  display: inline-block;
+  border: none;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 48px;
+  color: #FFFFFF;
+  padding-left: 35px;
+  padding-right: 35px;
+  outline: none;
+  cursor: pointer;
+  vertical-align: top;
+}
+

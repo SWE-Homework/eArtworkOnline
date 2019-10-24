@@ -26,7 +26,8 @@ import * as Material from '@angular/material';
     Material.MatListModule,
     Material.MatButtonModule,
     Material.MatIconModule,
-    Material.MatCardModule
+    Material.MatCardModule,
+    Material.MatStepperModule
   ],
   exports : [
     Material.MatToolbarModule,
@@ -48,7 +49,8 @@ import * as Material from '@angular/material';
     Material.MatListModule,
     Material.MatButtonModule,
     Material.MatIconModule,
-    Material.MatCardModule
+    Material.MatCardModule,
+    Material.MatStepperModule
   ]
 
 })

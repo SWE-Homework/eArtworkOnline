@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {UserService} from "../service/user.service";
 
 @Component({
@@ -8,11 +8,16 @@ import {UserService} from "../service/user.service";
   styleUrls: ['./after-add-tocart.component.scss']
 })
 export class AfterAddTocartComponent implements OnInit {
+  message1;
+  message2;
 
   constructor(private _router: Router,
-              private userService: UserService) { }
+              private userService: UserService,
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.message1=this.activatedRoute.snapshot.paramMap.get("message1");
+    this.message2=this.activatedRoute.snapshot.paramMap.get("message2");
   }
 
   checkout(){
