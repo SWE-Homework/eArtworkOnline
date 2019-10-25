@@ -75,7 +75,7 @@ export class ListProductsComponent implements OnInit {
 
   viewProduct(productId,image1,image2,image3,name,category,description,newPrice){
 
-      this._router.navigate(['viewArtwork',productId,image1,image2,image3,name,category,description,newPrice])
+      this._router.navigate(['viewArtwork',productId,image1,image2,image3,name,category,description,newPrice], {skipLocationChange: true})
 
   }
 }

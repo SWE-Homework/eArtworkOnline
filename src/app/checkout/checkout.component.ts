@@ -41,11 +41,11 @@ export class CheckoutComponent implements OnInit {
 
     let obj={
       "status": "P",
-        "dateCreated": "2013-10-10",
-        "dateShipped": "2013-10-10",
+        "dateCreated": new Date(),
+        "dateShipped": new Date(),
         "shippingInfo":{
         "shippingType":"",
-          "shippingCost":"10.10",
+          "shippingCost":this.cartService.getTotalPrice(),
           "shippingAddress":{
           "street": shipping.street,
             "city": shipping.city,
@@ -70,6 +70,13 @@ export class CheckoutComponent implements OnInit {
     }
 
     this.checkoutService.placeOrder(obj,this.userService.userLogin.userAccountId);
+
+
+    let obectTot={
+      totalPrice: 0,
+      totalItem: 0
+    }
+    this.cartService.emitValue(obectTot);
 
     this._router.navigate(['afteraddtocart','Your order has been placed successfully','Thank you for shopping with us'], {skipLocationChange: true})
     this.cartService.clearItems();

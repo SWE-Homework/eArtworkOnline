@@ -8,7 +8,7 @@ a:hover{
 .items {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 10%;
+  margin-left: 20%;
   margin-right: 10%;
   margin-bottom: 10px;
 
@@ -63,7 +63,7 @@ a:hover{
 }
 @media (min-width: 1670px) {
   .items .item {
-    min-width: calc(12.5% - 10px);
+    min-width: calc(30% - 10px);
   }
 }
 

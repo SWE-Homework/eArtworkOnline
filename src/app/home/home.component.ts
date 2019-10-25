@@ -19,8 +19,8 @@ export class HomeComponent implements OnInit {
 
   listCategory:any[]
   listCartItem;
-  totalAmountCart;
-  totalItemCart;
+  totalAmountCart=0;
+  totalItemCart=0;
   labelSignIn="Sign in";
     /*=[
     {categoryId: 1, name: 'All Categories'},
@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
 
   getArtworksByCategory(catId){
 
-    this._router.navigate(['listProductCategory',2,catId,''], {relativeTo:this._activedRoute})
+    this._router.navigate(['listProductCategory',2,catId,''], {skipLocationChange: true})
   }
 
   loadShippingCart(){
@@ -103,7 +103,7 @@ export class HomeComponent implements OnInit {
       }
       this.userService.isLoggedIn=false;
       this.userService.emitValue(obj);
-      this._router.navigate(['listProductCategory',1,'',''], {relativeTo:this._activedRoute})
+      this._router.navigate(['listProductCategory',1,'',''], {skipLocationChange: true})
     }else{
 
       this._router.navigate(['login'], {skipLocationChange: true})

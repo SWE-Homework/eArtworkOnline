@@ -10,6 +10,7 @@ import {ContactComponent} from "./contact/contact.component";
 import {CheckoutComponent} from "./checkout/checkout.component";
 import {LoginComponent} from "./login/login.component";
 import {UserAccount2Component} from "./user-account2/user-account2.component";
+import {AuthGuardGuard} from "./auth-guard.guard";
 
 
 const routes: Routes = [
@@ -18,7 +19,7 @@ const routes: Routes = [
   {path: 'shippingcart', component: ShippingCartComponent,data: {animation: 'shippingPage'}},
   {path: 'afteraddtocart/:message1/:message2', component: AfterAddTocartComponent,data: {animation: 'afteraddtocart'}},
   {path: 'contact', component: ContactComponent,data: {animation: 'contact'}},
-  {path: 'checkout', component: CheckoutComponent,data: {animation: 'checkout'}},
+  {path: 'checkout', component: CheckoutComponent,canActivate: [AuthGuardGuard],data: {animation: 'checkout'}},
   {path: 'login', component: LoginComponent,data: {animation: 'login'}},
   {path: 'register', component: UserAccount2Component,data: {animation: 'register'}},
   {path: 'viewArtwork/:id/:image1/:image2/:image3/:name/:category/:description/:newPrice', component: ProductViewComponent,data: {animation: 'viewProductPage'}},

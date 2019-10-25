@@ -68,7 +68,7 @@
           <!-- Logo -->
           <div class="col-lg-2 col-sm-3 col-3 order-1">
             <div class="logo_container">
-              <div class="logo"><a href="#">eArtShop</a></div>
+              <div class="logo"><a (click)="loadHomePage()">eArtShop</a></div>
             </div>
           </div>
 
@@ -152,10 +152,10 @@
 
               <div class="main_nav_menu ml-auto">
                 <ul class="standard_dropdown main_nav_dropdown">
-                  <li><a href="index.html">Home<i class="fas fa-chevron-down"></i></a></li>
-                  <li><a href="blog.html">Orders<i class="fas fa-chevron-down"></i></a></li>
+                  <li><a (click)="loadHomePage()">Home<i class="fas fa-chevron-down"></i></a></li>
+                  <li><a (click)="loadHomePage()">Orders<i class="fas fa-chevron-down"></i></a></li>
                   <li><a href="blog.html">Memberships & Subscription<i class="fas fa-chevron-down"></i></a></li>
-                  <li><a href="blog.html">Blog<i class="fas fa-chevron-down"></i></a></li>
+                  <li><a (click)="loadHomePage()">Blog<i class="fas fa-chevron-down"></i></a></li>
                   <li><a (click)="loadContact()">Contact<i class="fas fa-chevron-down"></i></a></li>
                 </ul>
               </div>
@@ -260,8 +260,8 @@
             <div class="footer_title">Got Question? Call Us 24/7</div>
             <div class="footer_phone">+38 068 005 3570</div>
             <div class="footer_contact_text">
-              <p>17 Princess Road, London</p>
-              <p>Grester London NW18JR, UK</p>
+              <p>1000 N. ST MUM</p>
+              <p>Fairfield, Iowa</p>
             </div>
             <div class="footer_social">
               <ul>
@@ -279,27 +279,19 @@
           <div class="footer_column">
             <div class="footer_title">Find it Fast</div>
             <ul class="footer_list">
-              <li><a href="#">Computers & Laptops</a></li>
-              <li><a href="#">Cameras & Photos</a></li>
-              <li><a href="#">Hardware</a></li>
-              <li><a href="#">Smartphones & Tablets</a></li>
-              <li><a href="#">TV & Audio</a></li>
+              <li *ngFor="let cat2 of listCategory"><a (click)="getArtworksByCategory(cat2.categoryId)">{{cat2.name}}</a></li>
+
             </ul>
-            <div class="footer_subtitle">Gadgets</div>
-            <ul class="footer_list">
-              <li><a href="#">Car Electronics</a></li>
-            </ul>
+
           </div>
         </div>
 
         <div class="col-lg-2">
           <div class="footer_column">
             <ul class="footer_list footer_list_2">
-              <li><a href="#">Video Games & Consoles</a></li>
-              <li><a href="#">Accessories</a></li>
-              <li><a href="#">Cameras & Photos</a></li>
-              <li><a href="#">Hardware</a></li>
-              <li><a href="#">Computers & Laptops</a></li>
+              <li *ngFor="let cat2 of listCategory"><a (click)="getArtworksByCategory(cat2.categoryId)">{{cat2.name}}</a></li>
+
+
             </ul>
           </div>
         </div>
@@ -308,13 +300,11 @@
           <div class="footer_column">
             <div class="footer_title">Customer Care</div>
             <ul class="footer_list">
-              <li><a href="#">My Account</a></li>
-              <li><a href="#">Order Tracking</a></li>
-              <li><a href="#">Wish List</a></li>
-              <li><a href="#">Customer Services</a></li>
-              <li><a href="#">Returns / Exchange</a></li>
-              <li><a href="#">FAQs</a></li>
-              <li><a href="#">Product Support</a></li>
+              <li><a (click)="loadHomePage()">Home</a></li>
+              <li><a (click)="loadHomePage()">Orders</a></li>
+              <li><a href="blog.html">Memberships & Subscription</a></li>
+              <li><a (click)="loadHomePage()">Blog</a></li>
+              <li><a (click)="loadContact()">Contact</a></li>
             </ul>
           </div>
         </div>

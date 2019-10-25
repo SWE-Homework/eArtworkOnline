@@ -28,9 +28,16 @@ export class CartService {
     return this.items;
   }
 
-  getChippingPrices(){
-    return this.httpClient.get('/assets/shipping.json');
+  getTotalPrice(){
+    let total=0;
+    for(let i=0;i<this.items.length;i++){
+      console.log("list : "+this.items);
+      total+=(this.items[i].newPrice*this.items[i].quantity);
+    }
+    return total;
   }
+
+
 
 
 }

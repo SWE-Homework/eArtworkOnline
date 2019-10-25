@@ -17,7 +17,8 @@ export class UserAccountService {
     firstName: new FormControl("",Validators.required),
     lastName: new FormControl("", ),
     email: new FormControl("", [Validators.required,Validators.email]),
-    password: new FormControl("", Validators.required),
+    password: new FormControl("", [Validators.required,Validators.minLength(8)]),
+    roleUser: new FormControl(0),
     //loginStatus: new FormControl(""),
     //roleUser: new FormControl(""),
     //userProfilePic: new FormControl(),
@@ -38,6 +39,7 @@ export class UserAccountService {
           lastName: this.formUserAccount.get('lastName').value,
           email: this.formUserAccount.get('email').value,
           password: this.formUserAccount.get('password').value,
+           roleUser: this.formUserAccount.get('roleUser').value
 
         }
 

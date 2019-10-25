@@ -11,6 +11,10 @@ import {Router} from "@angular/router";
   styleUrls: ['./user-account2.component.scss']
 })
 export class UserAccount2Component implements OnInit {
+  listAccountType=[
+    'ADMIN',
+    'CUSTOMER'
+  ]
 
   constructor(private service: UserAccountService,
               private dialog:MatDialog,private notificationService:NotificationService,

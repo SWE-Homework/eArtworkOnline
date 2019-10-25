@@ -18,6 +18,10 @@
             <input  formControlName="lastName" matInput placeholder="Last Name"/>
           </mat-form-field>
 
+
+
+
+
         </div>
         <div class="controles-container">
 
@@ -27,14 +31,30 @@
 
           <mat-form-field class="inputSpace">
             <input  formControlName="password" type="password" matInput placeholder="PassWord*"/>
-            <mat-error>Name is required</mat-error>
+            <mat-error>required and minlength is 8</mat-error>
           </mat-form-field>
 
         </div>
+
+      <!--  <mat-form-field>
+          <mat-select formControlName="roleUser" placeholder="RoleUser">
+            <mat-option value="-1">None</mat-option>
+
+            <ng-container *ngFor="let type of listAccountType">
+              <mat-option [value]="type">{{type}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>-->
+
         <div class="controles-container">
+
+
          <input    type="file"  (change)="onFileChange($event)"  placeholder=" Profile Pic*"/>
 
         </div>
+
+
+
       </mat-grid-tile>
 
     </mat-grid-list>
